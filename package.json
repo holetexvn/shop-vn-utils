@@ -1,0 +1,8 @@
+{
+  "name": "shop-vn-utils",
+  "version": "0.1.0",
+  "description": "Tien ich nho cho shop online Viet Nam (demo cho video Orca)",
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}
