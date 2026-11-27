@@ -14,3 +14,17 @@ test('#4 don dung 500.000d duoc mien phi ship', () => {
   assert.equal(r.ship, 0);
   assert.equal(r.total, 500000);
 });
+
+test('#4 cac ca bien phi ship quanh moc 500.000d', () => {
+  const below = cartTotal([{ price: 499999, qty: 1 }]);
+  assert.equal(below.ship, 30000);
+  assert.equal(below.total, 529999);
+
+  const exactAfterCoupon = cartTotal([{ price: 625000, qty: 1 }], 20);
+  assert.equal(exactAfterCoupon.ship, 0);
+  assert.equal(exactAfterCoupon.total, 500000);
+
+  const above = cartTotal([{ price: 500001, qty: 1 }]);
+  assert.equal(above.ship, 0);
+  assert.equal(above.total, 500001);
+});
